@@ -2,7 +2,7 @@
 A small utility app to make and share forms and collect responses
 
 ## Installation
-- Make sure `python3.x` is installed in your system and the environment variables are properly configured. Download python <a href='[https://www.python.org/downloads/](https://www.python.org/downloads/)'>here</a>
+- Make sure `python3.x` is installed in your system and the environment variables are properly configured. Download python [here](https://www.python.org/downloads/).
 
 - Install `virtualenv`
 
@@ -38,4 +38,4 @@ A small utility app to make and share forms and collect responses
 
 	`flask run`
 
-- Open <a href='localhost:5000/register'>localhost:5000/register</a> and you are set to go
+- Open [localhost:5000/register](localhost:5000/register) and you are set to go
