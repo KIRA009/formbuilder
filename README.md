@@ -38,4 +38,4 @@ A small utility app to make and share forms and collect responses
 
 	`flask run`
 
-- Open [localhost:5000/register](localhost:5000/register) and you are set to go
+- Open [localhost:5000/register](http://localhost:5000/register) and you are set to go
