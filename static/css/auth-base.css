@@ -1,0 +1,51 @@
+body {
+    margin-top: 70px;
+}
+header {
+    background-color: #1c3a56;
+    height: 70px;
+    position: fixed;
+    width: 100vw;
+    top:0;
+    z-index: 999;
+}
+header img {
+    float: left;
+}
+header a {
+    float: right;
+    margin: 10px;
+    position: relative;
+    top: -15px;
+}
+nav {
+    clear: right;
+    background-color: #1c3a56;
+    height: 45px;
+    padding-top: 10px;
+}
+nav a {
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding-right: 0;
+    padding-left: 0;
+    text-decoration: none;
+}
+nav a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #ffb838;
+    transition: 0.3s;
+    position: relative;
+    top: 8px;
+    margin-right: auto;
+    margin-left: auto;
+}
+nav a:hover::after, nav a.active:after {
+    width: 50%;
+}

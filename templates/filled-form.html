@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{ form.filled.title }} - form by {{ form.filled.username }}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/auth-base.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/create-form.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/fill-form.css') }}">
+    </head>
+    <body>
+        <div class="create-form ml-auto mr-auto">
+                <h1 class="text-left title">{{ form.filled.title }}</h1>
+                <h3 class="text-left desc">{{ form.filled.desc }}</h3>
+            <form method="POST" action="">
+                <div id="edit-form" form='{{ form.response }}'></div>
+            </form>
+            <h1 class="creator text-right"> - Created by {{ form.filled.username }}</h1>
+            <h1 class="creator text-right"> - Filled by {{ form.username }}</h1>
+        </div>
+        <script type="module" src="{{ url_for('static', filename='js/form-builder.js') }}"></script>
+        <script type="module" src="{{ url_for('static', filename='js/form-filler.js') }}"></script>
+    </body>
+</html>

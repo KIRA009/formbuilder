@@ -1,0 +1,28 @@
+{% include "unauth-base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+{% endblock css %}
+
+{% block content %}
+    <div class="form ml-auto mr-auto text-center">
+        <form method="POST" action="{{ url_for('login') }}" id="login">
+            <div class="form-group text-left">
+                <label for="username">Username</label>
+                <input id="username" class="form-control" name="username" type="text" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{4,19}$" title="Username should be at least 5 characters and at most 20 characters">
+            </div>
+            <div class="form-group text-left">
+                <label for="password">Password</label>
+                <input id="password" class="form-control" name="password" type="password" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{4,39}$" title="Password should be at least 5 characters and at most 40 characters">
+                <small id="show-pass">Show password</small>
+            </div>
+            <div class="form-group text-left">
+                <button id="submit" class="btn bg-prim" type="submit">Submit</button>
+            </div>
+            <a href="/register">Sign up here</a>
+        </form>
+    </div>
+{% endblock content %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/unauth.js') }}"></script>
+{% endblock js %}

@@ -1,0 +1,60 @@
+.forms {
+    width: 400px;
+    margin-top: 40px;
+}
+.forms .form-card {
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    transition: 300ms;
+}
+.forms .form-card .title {
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+}
+.forms .form-card .desc {
+    font-size: 18px;
+    color: #555;
+    font-weight: 400;
+}
+.forms .form-card > .face > small {
+    float: right;
+    background-color: #343434;
+    padding: 5px 10px;
+    color: white;
+    position: relative;
+    top: -60px;
+}
+.forms .form-card:hover {
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+.modal {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+.modal a {
+    padding: 10px 0;
+}
+.hide {
+    display: none;
+}
+.show {
+    animation: appear 0.5s linear;
+    animation-fill-mode: forwards;
+    display: flex;
+}
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.fillers > span {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    display: inline-block;
+}

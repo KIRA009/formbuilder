@@ -1,0 +1,63 @@
+.form {
+    width: 340px;
+    background-color: rgba(28, 191, 209, 0.6);
+    padding: 30px;
+    margin-top: 120px;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+.form label {
+    font-size: 18px;
+}
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+.form input {
+    transition: 0.3s!important;
+}
+.form-control {
+    display: block;
+    width: calc(100% - 20px);
+    height: 24px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    font-family: inherit;
+}
+.form input:focus, .form input:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 5px 0px #6c757d!important;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+.form a {
+    color: black;
+    float: right;
+    position: relative;
+    top: -50px;
+    text-decoration: none;
+}
+form small {
+    position: relative;
+    top: 10px;
+}
+form small:hover {
+    cursor: pointer;
+}
+input[type=datetime-local]::-webkit-inner-spin-button {
+    display: none;
+}

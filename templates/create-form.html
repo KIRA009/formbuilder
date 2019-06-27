@@ -1,0 +1,48 @@
+{% include 'auth-base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/create-form.css') }}">
+{% endblock css %}
+
+{% block content %}
+<div class="alert form-alert text-center hide" role="alert"></div>
+<div class="create-form ml-auto mr-auto">
+    <form method="POST" action="">
+        <div class="form-group text-left">
+            <input class="form-control title" type="text" required value="Untitled Form" style="font-size: 34px;">
+        </div>
+        <div class="form-group text-left">
+            <input class="form-control desc" required value="Form description">
+        </div>
+        <div class="form-group text-left">
+            <label for="date">Enter date of expiry of form ( optional )</label>
+            <input class="form-control" type="datetime-local" id="date">
+        </div>
+        <div id="edit-form"></div>
+        <button type="submit" class="btn bg-prim">Save form</button>
+    </form>
+</div>
+<div class="options mr-auto ml-auto row justify-content-between">
+    <div class="option" title="Short Answer">
+        <i data-type="inputtext" class="fas fa-comment"></i>
+    </div>
+    <div class="option" title="Number">
+        <i data-type="inputnum" class="fas fa-sort-numeric-up-alt" aria-hidden="true"></i>
+    </div>
+    <div class="option" title="Paragraph">
+        <i data-type="textarea" class="fas fa-paragraph" aria-hidden="true"></i>
+    </div>
+    <div class="option" title="Single Choice">
+        <i data-type="radio" class="far fa-dot-circle" aria-hidden="true"></i>
+    </div>
+    <div class="option" title="Checkboxes">
+        <img alt="checkbox" data-type="checkbox" src="https://img.icons8.com/ios/50/000000/checked-2-filled.png">
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+    <script src="https://kit.fontawesome.com/08d8f6996a.js"></script>
+    <script type="module" src="{{ url_for('static', filename='js/form-builder.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/form-creator.js') }}"></script>
+{% endblock js %}

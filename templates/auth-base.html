@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Form Builder</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/auth-base.css') }}">
+        {% block css %}{% endblock %}
+    </head>
+    <body>
+        <header>
+            <img alt="Logo Here">
+            <a class="btn bg-prim" href="{{ url_for('logout') }}">Logout {{ context.user.username }}</a>
+        </header>
+        <nav class="container-fluid">
+            <div class="row">
+                <a aria-current="page" class="col" href="/home/create">Create</a>
+                <a class="col" href="/home/created">Created</a>
+                <a class="col" href="/home/filled">Filled</a>
+            </div>
+            {% block content %}{% endblock %}
+            <script>
+                document.querySelector('a[href="' + window.location.pathname +'"]').classList.add('active');
+            </script>
+            {% block js %}{% endblock %}
+        </nav>
+    </body>
+</html>

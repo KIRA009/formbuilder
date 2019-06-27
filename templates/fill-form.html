@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{ form.title }} - form by {{ form.user }}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/auth-base.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/create-form.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/fill-form.css') }}">
+    </head>
+    <body>
+        {% if expired %}
+            <div class="text-center">
+                The submission time for the form has expired, Please contact the form owner for any details
+            </div>
+        {% else %}
+            <div class="alert alert-warning text-center" role="alert">
+                If you are the owner of the form, you can treat this as the mockup. Your submission will <b>not</b> be taken into account
+            </div>
+            <div class="alert form-alert text-center hide" role="alert"></div>
+            <div class="create-form ml-auto mr-auto">
+                    <h1 class="text-left title">{{ form.title }}</h1>
+                    <h3 class="text-left desc">{{ form.desc }}</h3>
+                <form method="POST" action="">
+                    <div id="edit-form" form='{{ form.form }}'></div>
+                    <button type="submit" class="btn bg-prim">Submit form</button>
+                </form>
+                <h1 class="creator text-right"> - Created by {{ form.user }}</h1>
+            </div>
+            <script type="module" src="{{ url_for('static', filename='js/form-builder.js') }}"></script>
+            <script type="module" src="{{ url_for('static', filename='js/form-filler.js') }}"></script>
+        {% endif %}
+    </body>
+</html>

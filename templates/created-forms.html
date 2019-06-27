@@ -1,0 +1,48 @@
+{% include 'auth-base.html' %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/created-forms.css') }}">
+{% endblock css %}
+{% block content %}
+    <div class="forms ml-auto mr-auto">
+        {% for form in context.forms %}
+        <div class="form-card col-12 text-left mb-3">
+            <div class="face">
+                <h2 class="title">{{ form.title }}</h2>
+                <h3 class="desc">{{ form.desc }}</h3>
+                <small class="url" url="{{ form.id }}">Copy url</small>
+            </div>
+            <small class="fillers">Filled by <span>{{ form.fillers|length }}</span> (click to see submissions)</small>
+            <div class="modal row hide">
+                {% for filler in form.fillers %}
+                    <a class="col-4" href="{{ url_for('filled_form', form_id=filler[1]) }}" target="_blank">{{ filler[0] }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+
+{% block js %}
+<script>
+    document.querySelectorAll('.url').forEach((el) => {
+        el.onclick = (evt) => {
+            let elem = evt.target;
+            let input = document.createElement('input');
+            input.value = window.location.host + '/home/form/fill/' + elem.getAttribute('url');
+            document.body.append(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            setTimeout(() => {
+                elem.innerHTML = 'Copy url'
+            }, 3000);
+            elem.innerHTML = 'Copied';
+        }
+    })
+    document.querySelectorAll('.fillers').forEach(el => {
+        el.onclick = evt => {
+            el.nextElementSibling.classList.contains('show') ? el.nextElementSibling.classList.remove('show') : el.nextElementSibling.classList.add('show')
+        }
+    })
+</script>
+{% endblock  %}

@@ -1,0 +1,10 @@
+.env
+__pycache__/
+migrations/
+tcl/
+.idea/
+Include/
+LICENSE.txt
+Lib/
+Scripts/
+*.db

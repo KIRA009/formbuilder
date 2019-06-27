@@ -1,0 +1,25 @@
+{% include 'auth-base.html' %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/created-forms.css') }}">
+{% endblock css %}
+{% block content %}
+    <div class="forms ml-auto mr-auto">
+        {% for form in context.forms %}
+        <div class="form-card col-12 text-left mb-3">
+            <div class="face">
+                <h2 class="title">{{ form.filled.title }}</h2>
+                <h3 class="desc">{{ form.filled.desc }}</h3>
+                <small class="url" url="{{ form.id }}">See filled form</small>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+
+{% block js %}
+<script>
+    document.querySelectorAll('.url').forEach((el) => {
+        el.onclick = (evt) => window.location = '/home/form/filled/' + evt.target.getAttribute('url');
+    })
+</script>
+{% endblock  %}

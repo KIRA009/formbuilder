@@ -1,0 +1,16 @@
+.creator {
+    font-weight: 400;
+    font-size: 24px;
+}
+.title {
+    font-size: 34px;
+    font-weight: 400;
+}
+.desc {
+    font-size: 18px;
+    font-weight: 400;
+}
+.fill-label {
+    font-size: 24px;
+    font-weight: 700;
+}
