@@ -42,17 +42,15 @@ export default class FormBuilder {
     add_require = () => {
         let attributes = {
             'type': 'checkbox',
-            'class': 'custom-control-input',
             'id': 'required' + this.key,
         }
         if (this.config.required)
             attributes.checked = true;
         return add_child(
             add_child(
-                create('div', {class: 'custom-control custom-checkbox'}),
+                create('div', {'style': 'margin-top: 20px;'}),
                 create('input', attributes, null, {change: this.toggle_required_option})), 
                 create('label', {
-                    class: 'custom-control-label',
                     for: 'required' + this.key
                 }, 'Required'));
     }
@@ -60,17 +58,15 @@ export default class FormBuilder {
     add_desc = () => {
         let attributes = {
             'type': 'checkbox',
-            'class': 'custom-control-input',
             'id': 'desc' + this.key,
         }
         if (this.config.desc)
             attributes.checked = true;
         return add_child(
             add_child(
-                create('div', {class: 'custom-control custom-checkbox'}),
+                create('div', {}),
                 create('input', attributes, null, {change: this.toggle_add_desc})), 
                 create('label', {
-                    class: 'custom-control-label',
                     for: 'desc' + this.key
                 }, 'Description'));
     }

@@ -51,10 +51,7 @@ let templates = {
     },
     checkbox_template: {
         type: 'checkbox',
-        options: [
-            'Yes (default checkbox option)',
-            'No (default checkbox option)'
-        ],
+        options: ['', ''],
         config: {
             desc: false,
             creating: true,
@@ -67,10 +64,7 @@ let templates = {
     },
     radio_template: {
         type: 'radio',
-        options: [
-            'Yes (default radio option)',
-            'No (default radio option)'
-        ],
+        options: ['', ''],
         config: {
             desc: false,
             creating: true,

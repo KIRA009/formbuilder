@@ -35,6 +35,9 @@ body {
     transform: translateY(-5px);
     text-decoration: none;
 }
+header .btn {
+    padding: 0 5px!important;
+}
 a {
     color: #007bff;
     text-decoration: none;
@@ -104,6 +107,7 @@ label {
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: .25rem;
+    top: -25px;
 }
 .alert-success {
     color: #155724;

@@ -16,6 +16,8 @@ body {
     width: 20px;
     height: 20px;
     padding: 14px 16px 14px 14px;
+    border-radius: 50%;
+    border: 2px solid #1c3a56;
 }
 .options .option i {
     font-size: 25px;
@@ -23,7 +25,6 @@ body {
 }
 .options .option img {
     position: relative;
-    left: -14px;
     height: 25px;
     transition: 0.3s;
 }

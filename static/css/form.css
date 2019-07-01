@@ -61,3 +61,8 @@ form small:hover {
 input[type=datetime-local]::-webkit-inner-spin-button {
     display: none;
 }
+input[type=checkbox] {
+    transform: scale(1.4);
+    cursor: pointer;
+    margin-top: 5px;
+}
