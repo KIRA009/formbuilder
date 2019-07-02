@@ -21,12 +21,16 @@ class User(db.Model, UserMixin):
 		super().__init__(**db_data)
 
 	def create(self):
-		db.session.add(self)
-		try:
-			db.session.commit()
-			return True
-		except IntegrityError:
-			return False
+	    for key, value in self.__dict__.items():
+	        if key.startswith('_'):
+	            pass
+	        self.__dict__[key] = value[0] if isinstance(value, list) else value  # workaround for pythonanywhere
+	    db.session.add(self)
+	    try:
+	        db.session.commit()
+	        return True
+	    except IntegrityError:
+	        return False
 
 	@staticmethod
 	def get(username):
